@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
-
 const todos = ref([])
 const name = ref('')
 
@@ -32,7 +31,7 @@ const removeTodo = todo => {
 }
 
 watch(todos, newVal => {
-  localStorage.setItem('todoos', JSON.stringify(newVal))
+  localStorage.setItem('todos', JSON.stringify(newVal))
 }, { deep: true })
 
 watch(name, (newVal) => {
@@ -67,7 +66,7 @@ onMounted(() => {
           <h4>Pick a category</h4>
 
           <div class="options">
-
+            
             <label>
               <input 
                 type="radio" 
